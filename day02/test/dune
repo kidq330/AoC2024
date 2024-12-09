@@ -1,0 +1,15 @@
+(library
+ (name runner)
+ (libraries ounit2 qcheck)
+ (modules
+  (:standard \ test_ex1 test_ex2)))
+
+; Excluding test modules from being part of the library
+
+(tests
+ (names test_ex1 test_ex2)
+ (libraries ounit2 qcheck day02 runner)
+ (modules
+  ("test_ex1" "test_ex2")))
+
+; Explicitly specifying which modules are part of the test executable
