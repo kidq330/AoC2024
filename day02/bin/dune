@@ -2,3 +2,8 @@
  (public_name day02)
  (name main)
  (libraries day02))
+
+(executable
+ (public_name diff)
+ (name diff)
+ (libraries day02))
