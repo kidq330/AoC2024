@@ -1,0 +1,15 @@
+(library
+ (name runner)
+ (libraries ounit2 qcheck)
+ (modules
+  (:standard \ test_ex1 test_ex2)))
+
+(test
+ (name test_ex1)
+ (libraries ounit2 qcheck runner day02)
+ (modules ("test_ex1")))
+
+(test
+ (name test_ex2)
+ (libraries ounit2 qcheck runner day02)
+ (modules ("test_ex2")))
