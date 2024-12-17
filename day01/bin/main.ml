@@ -1,10 +1,6 @@
-let pair_lists = () |> Day01.read_all_stdin |> Day01.parse_lines_with_two_integers |> List.split;;
+open Day01
 
-print_string "Answer to first exercise: ";;
-pair_lists |> Day01.solve_ex1 |> print_int;;
-print_string "\n";;
+let pair_lists = Io.parse_input ();;
 
-print_string "Answer to second exercise: ";;
-pair_lists |> Day01.solve_ex2 |> print_int;;
-print_string "\n";;
-  
+BatPrintf.printf "Answer to first exercise: %d\n" (Ex1.solve pair_lists);;
+BatPrintf.printf "Answer to second exercise: %d\n" (Ex2.solve pair_lists)
