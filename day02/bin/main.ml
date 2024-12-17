@@ -1,16 +1,9 @@
-let pair_lists = () |> Day02.Io.read_all_stdin |> Day02.Io.parse_lines_of_ints
-;;
+open Day02
+
+let pair_lists = Io.parse_input () ;;
 
 (* regression: 411 *)
-print_string "Answer to first exercise: " ;;
+BatPrintf.printf "Answer to first exercise: %d\n" (Ex1.solve pair_lists) ;;
 
-pair_lists |> Day02.Ex1.solve_ex1 |> print_int ;;
-
-print_string "\n" ;;
-
-(* regression: 468 *)
-print_string "Answer to second exercise: " ;;
-
-pair_lists |> Day02.Ex2.solve_ex2 |> print_int ;;
-
-print_string "\n"
+(* regression: 465 *)
+BatPrintf.printf "Answer to second exercise: %d\n" (Ex2.solve pair_lists)

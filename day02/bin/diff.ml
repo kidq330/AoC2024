@@ -4,19 +4,10 @@
   but did not pass the harder check from exercise 1.
 *)
 
-open Day02 ;;
+open Day02;;
 
-let print_list xs =
-  let () =
-    List.iter
-      (fun x ->
-        let () = x |> print_int in
-        print_string " " )
-      xs
-  in
-  print_endline ""
-in
-() |> Io.read_all_stdin |> Io.parse_lines_of_ints
+let print_list = BatList.print (BatList.print BatInt.print) BatIO.stdout in
+() |> Io.parse_input
 |> List.filter (fun xs ->
-       Ex2.is_bounded_monotonic2 xs && not (Ex1.is_bounded_monotonic xs) )
-|> List.iter print_list
+       Ex2.is_bounded_monotonic2 xs && not (Ex1.is_bounded_monotonic xs))
+|> print_list
