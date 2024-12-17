@@ -1,0 +1,1 @@
+let parse_input () = BatIO.read_all BatIO.stdin
