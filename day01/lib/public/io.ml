@@ -7,6 +7,5 @@ let parse_input () =
       Some (n0, n1)
     else None
   in
-  BatIO.stdin |> BatIO.read_all
-  |> Str.split (Str.regexp "\n")
+  BatIO.stdin |> BatIO.read_all |> String.split_on_char ' '
   |> List.filter_map parse_pair |> List.split
